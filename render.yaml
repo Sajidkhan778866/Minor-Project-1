@@ -1,0 +1,35 @@
+services:
+  # Node.js Backend API
+  - type: web
+    name: ai-study-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false # User must set this in the Render dashboard
+      - key: AI_SERVICE_URL
+        fromService:
+          type: web
+          name: ai-study-python
+          envVarKey: RENDER_EXTERNAL_URL
+
+  # Python AI Service
+  - type: web
+    name: ai-study-python
+    env: python
+    rootDir: python-ai-service
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: PORT
+        value: 10000
+      - key: GEMINI_API_KEY
+        sync: false # User must set this in the Render dashboard

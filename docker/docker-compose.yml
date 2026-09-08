@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  backend:
+    build:
+      context: ../backend
+      dockerfile: ../docker/Dockerfile.backend
+    ports:
+      - '5000:5000'
+    environment:
+      PORT: 5000
+
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+
+  python-ai-service:
+    build:
+      context: ../python-ai-service
+      dockerfile: ../docker/Dockerfile.python
+    ports:
+      - '8000:8000'
