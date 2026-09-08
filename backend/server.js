@@ -1153,8 +1153,12 @@ app.get('/api/admin/metrics', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  logger.info(`🚀 AI Study Strategist Enterprise Backend running on http://localhost:${PORT}`);
-  logger.info(`📚 Parul Institute of Technology Minor Project API ready!`);
-  logger.info(`🌐 All-in-One Learning Hub initialized: LeetCode + HackerRank + Codeforces + CodeChef + In-App YouTube Theater!`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    logger.info(`🚀 AI Study Strategist Enterprise Backend running on http://localhost:${PORT}`);
+    logger.info(`📚 Parul Institute of Technology Minor Project API ready!`);
+    logger.info(`🌐 All-in-One Learning Hub initialized: LeetCode + HackerRank + Codeforces + CodeChef + In-App YouTube Theater!`);
+  });
+}
+
+export default app;

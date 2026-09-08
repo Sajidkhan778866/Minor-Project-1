@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:5010';
-export const AI_BASE_URL = (import.meta as any).env?.VITE_AI_URL || 'http://localhost:8010';
+export const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || '';
+export const AI_BASE_URL = (import.meta as any).env?.VITE_AI_URL || '';
 
 export const api = axios.create({
   baseURL: API_BASE_URL,
