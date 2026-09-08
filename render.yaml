@@ -12,7 +12,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        sync: false # User must set this in the Render dashboard
+        sync: false
       - key: AI_SERVICE_URL
         fromService:
           type: web
@@ -32,4 +32,27 @@ services:
       - key: PORT
         value: 10000
       - key: GEMINI_API_KEY
-        sync: false # User must set this in the Render dashboard
+        sync: false
+
+  # React Frontend
+  - type: web
+    name: ai-study-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: ai-study-backend
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: VITE_AI_URL
+        fromService:
+          type: web
+          name: ai-study-python
+          envVarKey: RENDER_EXTERNAL_URL
