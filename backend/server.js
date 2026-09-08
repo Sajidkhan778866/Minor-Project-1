@@ -103,7 +103,7 @@ const memoryDb = {
   ],
   resources: [
     { resource_id: 'RES-501', topic_id: 'TOP-1', resource_type: 'Video Stream', content_url: 'https://www.youtube.com/watch?v=kCc8FmRoS0j', title: 'Deep Bidirectional Transformers for Language Understanding' },
-    { resource_id: 'RES-502', topic_id: 'TOP-2', resource_type: 'PDF', content_url: '/assets/minor-project-report.pdf', title: 'Parul University CSE AY 2025-2026 Specification Notes' }
+    { resource_id: 'RES-502', topic_id: 'TOP-2', resource_type: 'PDF', content_url: '/assets/major-project-report.pdf', title: 'Parul University CSE AY 2025-2026 Specification Notes' }
   ],
   lectures: [
     {
@@ -325,7 +325,7 @@ const memoryDb = {
     }
   ],
   quizzes: [
-    { quiz_id: 'QUZ-301', quiz_name: 'Minor Project Architecture Quiz', qb_id: 'QB-101', total_questions: 10 }
+    { quiz_id: 'QUZ-301', quiz_name: 'Major Project Architecture Quiz', qb_id: 'QB-101', total_questions: 10 }
   ],
   assessments: [
     { assessment_id: 'ASS-801', quiz_id: 'QUZ-301', student_id: 'usr-1', assessment_date: new Date().toISOString(), duration_seconds: 450 }
@@ -368,7 +368,7 @@ app.get('/api/swagger.json', (req, res) => {
     info: {
       title: "AI Study Strategist Enterprise API & All-in-One Learning Hub",
       version: "3.0.0",
-      description: "Complete RESTful API implementation for Parul University Minor Project Report with Unified Coding Practice & In-App YouTube Theater"
+      description: "Complete RESTful API implementation for Parul University Major Project Report with Unified Coding Practice & In-App YouTube Theater"
     },
     paths: {
       "/api/coding/problems": { get: { summary: "Retrieve competitive coding challenges from LeetCode, HackerRank, Codeforces, and CodeChef" } },
@@ -1156,7 +1156,7 @@ app.get('/api/admin/metrics', (req, res) => {
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
   app.listen(PORT, () => {
     logger.info(`🚀 AI Study Strategist Enterprise Backend running on http://localhost:${PORT}`);
-    logger.info(`📚 Parul Institute of Technology Minor Project API ready!`);
+    logger.info(`📚 Parul Institute of Technology Major Project API ready!`);
     logger.info(`🌐 All-in-One Learning Hub initialized: LeetCode + HackerRank + Codeforces + CodeChef + In-App YouTube Theater!`);
   });
 }

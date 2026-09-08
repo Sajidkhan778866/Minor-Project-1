@@ -39,7 +39,7 @@ const puppeteer = require('puppeteer-core');
     // 5. Fill repository name
     console.log("Filling repository details...");
     await page.waitForSelector('input[data-testid="repository-name-input"]'); // GitHub's new React UI uses testid
-    await page.type('input[data-testid="repository-name-input"]', 'Minor-Project-1');
+    await page.type('input[data-testid="repository-name-input"]', 'Major-Project-1');
 
     // Wait for the availability check to pass
     await new Promise(r => setTimeout(r, 2000));

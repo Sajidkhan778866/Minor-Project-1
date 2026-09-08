@@ -59,10 +59,10 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
             <button
               onClick={() => setShowTeamModal(true)}
               className={`flex items-center gap-1.5 hover:text-cyan-500 transition font-black ${theme.textSecondary}`}
-              title="View College Minor Project Report Team"
+              title="View College Major Project Report Team"
             >
               <FaUniversity className="text-cyan-500 text-base" />
-              <span className="hidden lg:inline">Minor Project Team 🏅</span>
+              <span className="hidden lg:inline">Major Project Team 🏅</span>
             </button>
 
             {user ? (
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
         </nav>
       </header>
       
-      {/* Parul University Minor Project Attribution Modal */}
+      {/* Parul University Major Project Attribution Modal */}
       {showTeamModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/85 p-4 backdrop-blur-md">
           <div className="relative w-full max-w-lg rounded-3xl border border-white/15 bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-950 p-8 shadow-2xl text-slate-100">
@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
               </div>
             </div>
             <h3 className="mb-3 text-lg font-black text-amber-300 flex items-center gap-2">
-              <span>B.Tech 6th Semester Minor Project Report</span>
+              <span>B.Tech 6th Semester Major Project Report</span>
               <span>🏆 💫</span>
             </h3>
             <p className="mb-6 text-sm text-slate-300 leading-relaxed font-medium">

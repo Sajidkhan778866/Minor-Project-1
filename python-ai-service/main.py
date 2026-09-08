@@ -307,7 +307,7 @@ async def ai_chatbot(req: ChatRequest):
         )
     elif "who built" in msg_lower or "developer" in msg_lower or "parul" in msg_lower or "project" in msg_lower:
         reply = (
-            "**AI Study Strategist** was developed as an enterprise B.Tech 6th Semester Minor Project "
+            "**AI Study Strategist** was developed as an enterprise B.Tech 6th Semester Major Project "
             "at **Parul Institute of Technology (Parul University)** under the supervision of **Mrs. Gayatri Devraj Naidu**.\n\n"
             "**Team Members:**\n"
             "• Sajid Khan (2303051240191)\n"

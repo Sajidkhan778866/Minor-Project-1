@@ -50,7 +50,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ authUser, onLoginSucce
           >
             <div className={`inline-flex items-center gap-2.5 rounded-full border px-4 py-1.5 text-xs font-black uppercase tracking-wider shadow-md ${isDark ? 'border-cyan-400/40 bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 text-cyan-300' : 'border-indigo-400 bg-indigo-50 text-indigo-900'}`}>
               <span className="flex h-2.5 w-2.5 rounded-full bg-cyan-400 animate-ping" />
-              <span>🏛️ Parul Institute of Technology • Minor Project Report 🏆</span>
+              <span>🏛️ Parul Institute of Technology • Major Project Report 🏆</span>
             </div>
 
             <h1 className={`text-4xl font-black leading-tight tracking-tight sm:text-6xl lg:leading-[1.1] ${theme.textPrimary}`}>
@@ -255,7 +255,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ authUser, onLoginSucce
               <span>Parul Institute of Technology (Parul University, Vadodara)</span>
               <span>🏛️ 👑</span>
             </h3>
-            <p className="text-sm font-extrabold text-cyan-300">Department of Computer Science & Engineering • AY 2025-2026 Minor Project Report 🏆 ✨</p>
+            <p className="text-sm font-extrabold text-cyan-300">Department of Computer Science & Engineering • AY 2025-2026 Major Project Report 🏆 ✨</p>
             <p className="text-xs text-slate-300 font-bold leading-relaxed max-w-2xl mx-auto">
               An enterprise demonstration of generative AI and competitive programming unionized in modern computer science education through automated video comprehension and multi-platform developer evaluation! 🚀 💎
             </p>

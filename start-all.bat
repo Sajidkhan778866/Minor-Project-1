@@ -1,5 +1,5 @@
 @echo off
-title AI Study Strategist - One-Click Launcher (Parul University Minor Project)
+title AI Study Strategist - One-Click Launcher (Parul University Major Project)
 echo ==============================================================================
 echo 🚀 AI Study Strategist - Enterprise MERN Stack Launcher
 echo 🏛️ Parul Institute of Technology (CSE Department - AY 2025-2026)
