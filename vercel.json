@@ -1,27 +1,18 @@
 {
-    "services": {
-        "frontend": {
-            "root": "frontend",
-            "framework": "vite"
-        },
-        "backend": {
-            "root": "backend"
-        }
-    },
-    "rewrites": [
-        {
-            "source": "/api(/.*)?",
-            "destination": {
-                "type": "service",
-                "service": "backend"
-            }
-        },
-        {
-            "source": "/(.*)",
-            "destination": {
-                "type": "service",
-                "service": "frontend"
-            }
-        }
-    ]
+  "version": 2,
+  "builds": [
+    { "src": "backend/server.js", "use": "@vercel/node" },
+    { "src": "python-ai-service/main.py", "use": "@vercel/python" },
+    { 
+      "src": "frontend/package.json", 
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "routes": [
+    { "src": "/api/ai/(.*)", "dest": "/python-ai-service/main.py" },
+    { "src": "/api/(.*)", "dest": "/backend/server.js" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/frontend/index.html" }
+  ]
 }
