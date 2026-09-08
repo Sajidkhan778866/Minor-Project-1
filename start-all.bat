@@ -11,10 +11,10 @@ echo [1/3] Launching Python AI Microservice on Port 8000...
 start "AI Engine (Port 8000)" /D "%~dp0python-ai-service" cmd /k "python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
 
 echo [2/3] Launching Node.js Express Backend on Port 5000...
-start "Backend API (Port 5000)" /D "%~dp0backend" cmd /k "node server.js"
+start "Backend API (Port 5000)" /D "%~dp0backend" cmd /k "set PORT=5000&& set AI_SERVICE_URL=http://localhost:8000&& node server.js"
 
 echo [3/3] Launching React Vite Frontend on Port 5174...
-start "Frontend UI (Port 5174)" /D "%~dp0frontend" cmd /k "npm run dev -- --port 5174 --host"
+start "Frontend UI (Port 5174)" /D "%~dp0frontend" cmd /k "set VITE_API_URL=http://localhost:5000&& set VITE_AI_URL=http://localhost:8000&& npm run dev -- --port 5174 --host"
 
 echo.
 echo ✅ All microservices initiated in separate terminal windows!

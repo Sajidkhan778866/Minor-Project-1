@@ -11,10 +11,10 @@ Write-Host "[1/3] Launching Python AI Microservice on Port 8000..." -ForegroundC
 Start-Process "powershell" -ArgumentList "-NoExit", "-Command", "cd '$baseDir\python-ai-service'; python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
 
 Write-Host "[2/3] Launching Node.js Express Backend on Port 5000..." -ForegroundColor Yellow
-Start-Process "powershell" -ArgumentList "-NoExit", "-Command", "cd '$baseDir\backend'; node server.js"
+Start-Process "powershell" -ArgumentList "-NoExit", "-Command", "`$env:PORT='5000'; `$env:AI_SERVICE_URL='http://localhost:8000'; cd '$baseDir\backend'; node server.js"
 
 Write-Host "[3/3] Launching React Vite Frontend on Port 5174..." -ForegroundColor Yellow
-Start-Process "powershell" -ArgumentList "-NoExit", "-Command", "cd '$baseDir\frontend'; npm run dev -- --port 5174 --host"
+Start-Process "powershell" -ArgumentList "-NoExit", "-Command", "`$env:VITE_API_URL='http://localhost:5000'; `$env:VITE_AI_URL='http://localhost:8000'; cd '$baseDir\frontend'; npm run dev -- --port 5174 --host"
 
 Write-Host ""
 Write-Host "✅ All microservices launched successfully in independent PowerShell windows!" -ForegroundColor Green
